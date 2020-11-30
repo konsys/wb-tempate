@@ -1,6 +1,6 @@
 import _ from "lodash";
 import "./style.css";
-// import printMe from "./print";
+import printMe from "./print";
 
 function component() {
   const element = document.createElement("div");
@@ -11,7 +11,7 @@ function component() {
 
   const btn = document.createElement("button");
   btn.innerHTML = "Click me and check the console!";
-  // btn.onclick = printMe;
+  btn.onclick = printMe;
 
   element.appendChild(btn);
 

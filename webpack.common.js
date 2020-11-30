@@ -11,7 +11,6 @@ module.exports = {
   },
   devtool: "inline-source-map",
   plugins: [
-    // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: "Production",
@@ -21,6 +20,12 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
+  },
+  optimization: {
+    usedExports: true,
+  },
+  resolve: {
+    extensions: [".js", ".jsx", ".png", ".jpg", ".ts", ".tsx"],
   },
   module: {
     rules: [
