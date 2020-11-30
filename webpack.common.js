@@ -7,8 +7,9 @@ const json5 = require("json5");
 
 module.exports = {
   entry: {
-    app: "./src/index.js",
+    app: "./src/index.ts",
   },
+  devtool: "inline-source-map",
   plugins: [
     // new CleanWebpackPlugin(['dist/*']) for < v2 versions of CleanWebpackPlugin
     new CleanWebpackPlugin(),
@@ -16,6 +17,7 @@ module.exports = {
       title: "Production",
     }),
   ],
+
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -62,6 +64,11 @@ module.exports = {
         parser: {
           parse: json5.parse,
         },
+      },
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
       },
     ],
   },
