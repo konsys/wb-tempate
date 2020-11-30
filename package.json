@@ -6,9 +6,9 @@
     "private": true,
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack",
+        "build": "webpack --config webpack.prod.js",
         "watch": "webpack --watch",
-        "start": "webpack serve --open Chrome.exe",
+        "start": "webpack serve --config webpack.dev.js --open  Chrome.exe",
         "server": "node server.js"
     },
     "keywords": [],
@@ -27,6 +27,7 @@
         "webpack-cli": "^4.2.0",
         "webpack-dev-middleware": "^4.0.2",
         "webpack-dev-server": "^3.11.0",
+        "webpack-merge": "^5.4.0",
         "xml-loader": "^1.2.1",
         "yamljs": "^0.3.0"
     },
